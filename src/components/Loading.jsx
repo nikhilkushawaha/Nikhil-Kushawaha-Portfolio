@@ -1,5 +1,6 @@
 import { Html, useProgress } from '@react-three/drei';
 
+
 const CanvasLoader = () => {
   const { progress } = useProgress();
   return (
@@ -13,12 +14,13 @@ const CanvasLoader = () => {
         flexDirection: 'column',
       }}>
       <span className="canvas-loader"></span>
+      <div class="loader"></div>
       <p
         style={{
           fontSize: 14,
           color: '#F1F1F1',
           fontWeight: 800,
-          marginTop: 40,
+          marginTop: 30,
         }}>
         {progress !== 0 ? `${progress.toFixed(2)}%` : 'Loading...'}
       </p>

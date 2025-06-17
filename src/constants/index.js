@@ -20,52 +20,72 @@ export const navLinks = [
       href: '#contact',
     },
   ];
-  
-  export const clientReviews = [
-    {
-      id: 1,
-      name: 'Emily Johnson',
-      position: 'Marketing Director at GreenLeaf',
-      img: 'assets/review1.png',
-      review:
-        'Working with Adrian was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.',
-    },
-    {
-      id: 2,
-      name: 'Mark Rogers',
-      position: 'Founder of TechGear Shop',
-      img: 'assets/review2.png',
-      review:
-        'Adrian’s expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He’s a true professional! Fantastic work.',
-    },
-    {
-      id: 3,
-      name: 'John Dohsas',
-      position: 'Project Manager at UrbanTech ',
-      img: 'assets/review3.png',
-      review:
-        'I can’t say enough good things about Adrian. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.',
-    },
-    {
-      id: 4,
-      name: 'Ether Smith',
-      position: 'CEO of BrightStar Enterprises',
-      img: 'assets/review4.png',
-      review:
-        'Adrian was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend backend dev are top-notch.',
-    },
-  ];
+
+  export const words = [
+  { text: "Ideas", imgPath: "/images/ideas.svg" },
+  { text: "Concepts", imgPath: "/images/concepts.svg" },
+  { text: "Designs", imgPath: "/images/designs.svg" },
+  { text: "Code", imgPath: "/images/code.svg" },
+  { text: "Ideas", imgPath: "/images/ideas.svg" },
+  { text: "Concepts", imgPath: "/images/concepts.svg" },
+  { text: "Designs", imgPath: "/images/designs.svg" },
+  { text: "Code", imgPath: "/images/code.svg" },
+];
   
   export const myProjects = [
     {
-      title: 'Podcastr - AI Podcast Platform',
-      desc: 'Podcastr is a revolutionary Software-as-a-Service platform that transforms the way podcasts are created. With advanced AI-powered features like text-to-multiple-voices functionality, it allows creators to generate diverse voiceovers from a single text input.',
+      title: 'EduAi - Your Personalized Learning Companion',
+      desc: 'EduAI is an interactive AI-powered educational platform designed to help students master specific topics through personalized tutoring. Built using Next.js, Firebase, Vapi AI, and Google Gemini, EduAI delivers dynamic voice-enabled sessions, feedback-driven learning, and intelligent topic breakdowns. Users can engage via voice or text, making complex concepts easier to understand with real-time assistance.',
       subdesc:
-        'Built as a unique Software-as-a-Service app with Next.js 14, Tailwind CSS, TypeScript, Framer Motion and Convex, Podcastr is designed for optimal performance and scalability.',
-      href: 'https://www.youtube.com/watch?v=zfAb95tJvZQ',
-      texture: '/textures/project/project1.mp4',
-      logo: '/assets/project-logo1.png',
+        'With EduAI, the students can understand complex topics through interactive and voice-enabled tutoring.',
+      href: 'https://edu-ai-wine.vercel.app/',
+      project: '/texture/eduAi.png',
+      texture: '/texture/eduAi.png',
+      logo: '/assets/project-logo2.png',
       logoStyle: {
+        backgroundColor: '#13202F',
+        border: '0.2px solid #17293E',
+        boxShadow: '0px 0px 60px 0px #2F6DB54D',
+      },
+      spotlight: '/assets/spotlight2.png',
+      tags: [
+        {
+          id: 1,
+          name: 'Next.js',
+          path: '/assets/Next.js.svg',
+        },
+        {
+          id: 2,
+          name: 'TailwindCSS',
+          path: 'assets/tailwindcss.png',
+        },
+        {
+          id: 3,
+          name: 'TypeScript',
+          path: '/assets/typescript.png',
+        },
+        {
+          id: 4,
+          name: 'Firebase',
+          path: '/assets/firebase.svg',
+        },
+      ],
+    },
+    {
+      title: 'NIL-The Personal Assistant',
+      desc: 'NIL - The Personal Assistant is an innovative AI-driven solution powered by Gemini API, designed to transform user interactions with technology. This assistant seamlessly supports both text and voice inputs, allowing users to communicate naturally. By processing user prompts with precision, NIL generates intelligent and relevant responses, providing a personalized and engaging experience.',
+      subdesc:
+        'Built as a unique Software-as-a-Service app with React.js, Tailwind CSS, Three.js, NIL is designed for optimal performance and scalability.',
+      href: 'https://idyllic-naiad-acfb7a.netlify.app/',
+      project: '/projects/Project-Nil.png',
+      texture: '/projects/Project-Nil.png',
+      logo: '/assets/nil_logo.png',
+      logoImageStyle: {
+        height: "4rem",
+        width: "4rem",
+      },
+      logoStyle: {
+        padding: "0px",
         backgroundColor: '#2A1816',
         border: '0.2px solid #36201D',
         boxShadow: '0px 0px 60px 0px #AA3C304D',
@@ -84,35 +104,33 @@ export const navLinks = [
         },
         {
           id: 3,
-          name: 'TypeScript',
-          path: '/assets/typescript.png',
-        },
-        {
-          id: 4,
-          name: 'Framer Motion',
-          path: '/assets/framer.png',
+          name: 'Three.js',
+          path: '/assets/Three.js.svg',
         },
       ],
     },
     {
-      title: 'LiveDoc - Real-Time Google Docs Clone',
-      desc: 'LiveDoc is a powerful collaborative app that elevates the capabilities of real-time document editing. As an enhanced version of Google Docs, It supports millions of collaborators simultaneously, ensuring that every change is captured instantly and accurately.',
+      title: 'MediCare - Hospital Management System',
+      desc: 'MediCare is a modern Hospital Management System built with the MERN stack, offering dedicated dashboards for Admins, Doctors, Patients, and Pharmacists. It includes AI-powered symptom detection, doctor and medicine recommendations, appointment scheduling, digital prescriptions, and an integrated pharmacy module. The platform ensures secure access, responsive design, and streamlines healthcare management through automation and intelligent features.',
       subdesc:
-        'With LiveDoc, users can experience the future of collaboration, where multiple contributors work together in real time without any lag, by using Next.js and Liveblocks newest features.',
-      href: 'https://www.youtube.com/watch?v=y5vE8y_f_OM',
-      texture: '/textures/project/project2.mp4',
-      logo: '/assets/project-logo2.png',
+        'Smart hospital management platform with AI-driven diagnosis, medicine suggestions, and role-based access for better healthcare coordination.',
+      href: 'https://github.com/nikhilkushawaha/Medi_Care.git',
+      project: '/projects/medicare.png',
+      texture: '/projects/medicare.png',
+      logo: '/assets/project-logo3.png',
       logoStyle: {
-        backgroundColor: '#13202F',
-        border: '0.2px solid #17293E',
-        boxShadow: '0px 0px 60px 0px #2F6DB54D',
+        backgroundColor: '#60f5a1',
+        background:
+          'linear-gradient(0deg, #60F5A150, #60F5A150), linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(208, 213, 221, 0.8) 100%)',
+        border: '0.2px solid rgba(208, 213, 221, 1)',
+        boxShadow: '0px 0px 60px 0px rgba(35, 131, 96, 0.3)',
       },
-      spotlight: '/assets/spotlight2.png',
+      spotlight: '/assets/spotlight3.png',
       tags: [
         {
           id: 1,
-          name: 'React.js',
-          path: '/assets/react.svg',
+          name: 'Vite.js',
+          path: '/assets/Vite.js.svg',
         },
         {
           id: 2,
@@ -126,19 +144,100 @@ export const navLinks = [
         },
         {
           id: 4,
-          name: 'Framer Motion',
-          path: '/assets/framer.png',
+          name: 'Shadcn',
+          path: '/assets/shadcn.svg',
         },
       ],
     },
     {
-      title: 'CarePulse - Health Management System',
-      desc: 'An innovative healthcare platform designed to streamline essential medical processes. It simplifies patient registration, appointment scheduling, and medical record management, providing a seamless experience for both healthcare providers and patients.',
+      title: 'FinBuddy - AI-Integrated Finance Platform',
+      desc: 'FinBuddy is a comprehensive online banking platform that offers users a centralized finance management dashboard. It allows users to connect multiple bank accounts, monitor real-time transactions, and seamlessly transfer money to other users.',
       subdesc:
-        'With a focus on efficiency, CarePulse integrantes complex forms and SMS notifications, by using Next.js, Appwrite, Twillio and Sentry that enhance operational workflows.',
-      href: 'https://www.youtube.com/watch?v=lEflo_sc82g',
-      texture: '/textures/project/project3.mp4',
-      logo: '/assets/project-logo3.png',
+        '• Built a smart financial dashboard leveraging AI to deliver personalized insights and budgeting tips. Integrated OpenAI API for predictive analytics, expense breakdown, and budget optimization.Leveraged Clerk for secure OAuth-based user sign-in, session persistence, and role separation.Incorporated dynamic charts, user session tracking, and MongoDB aggregation queries. Deployed the project on Vercel with CI/CD integration and responsive UI for all devices.',
+      href: 'https://github.com/nikhilkushawaha/FinBuddy.git',
+      project: '/projects/finbuddy.png',
+      texture: '/projects/finbuddy.png',
+      logo: '/assets/project-logo4.png',
+      logoStyle: {
+        backgroundColor: '#0E1F38',
+        border: '0.2px solid #0E2D58',
+        boxShadow: '0px 0px 60px 0px #2F67B64D',
+      },
+      spotlight: '/assets/spotlight4.png',
+      tags: [
+        {
+          id: 1,
+          name: 'Next.js',
+          path: '/assets/Next.js.svg',
+        },
+        {
+          id: 2,
+          name: 'TailwindCSS',
+          path: 'assets/tailwindcss.png',
+        },
+        {
+          id: 3,
+          name: 'JavaScript',
+          path: '/assets/javascript.svg',
+        },
+        {
+          id: 4,
+          name: 'MongoDB',
+          path: '/assets/mongodb.svg',
+        },
+      ],
+    },
+    {
+      title: 'ChefMate - AI-Powered Cooking Assistant',
+      desc: 'ChefMate is an AI-powered cooking assistant built with the MERN stack and integrated with LangChain and OpenAI APIs. It helps users discover recipes, manage ingredients, get voice-guided instructions, and even generate personalized meal plans. ChefMate offers a conversational interface where users can ask for recipes, substitutes, and step-by-step cooking help, making it a smart kitchen companion for all skill levels.',
+      subdesc:
+        'AI-based cooking assistant that helps users find, follow, and personalize recipes using voice commands and intelligent suggestions.',
+      href: 'https://github.com/nikhilkushawaha/chefMate.git',
+      project: '/projects/chefmate.png',
+      texture: '/projects/chefmate.png',
+      logo: '/assets/project-logo5.png',
+      logoStyle: {
+        backgroundColor: '#1C1A43',
+        border: '0.2px solid #252262',
+        boxShadow: '0px 0px 60px 0px #635BFF4D',
+      },
+      spotlight: '/assets/spotlight5.png',
+      tags: [
+        {
+          id: 1,
+          name: 'Node.js',
+          path: '/assets/Node.js.svg',
+        },
+        {
+          id: 2,
+          name: 'TailwindCSS',
+          path: 'assets/tailwindcss.png',
+        },
+        {
+          id: 3,
+          name: 'TypeScript',
+          path: '/assets/typescript.png',
+        },
+        {
+          id: 4,
+          name: 'Lang Chain',
+          path: '/assets/langchain.svg',
+        },
+      ],
+    },
+    {
+      title: 'MyStore - Ecommerce Webpage ',
+      desc: 'MyStore is a fully functional e-commerce platform developed using the MERN stack, enabling users to browse products, add items to a cart, and place orders with ease. The application features user authentication, product filtering, responsive design, and real-time cart updates. Admins can manage inventory, track orders, and maintain a seamless shopping experience.',
+      subdesc:
+        'A modern e-commerce web app with product listings, cart functionality, secure login, and admin controls for inventory and order management.',
+      href: 'https://github.com/nikhilkushawaha/MyStore-fullstack.git',
+      project: '/projects/mystore.png',
+      texture: '/projects/mystore.png',
+      logo: '/assets/project-logo6.png',
+      logoImageStyle: {
+        height: "4rem",
+        width: "4rem",
+      },
       logoStyle: {
         backgroundColor: '#60f5a1',
         background:
@@ -160,87 +259,13 @@ export const navLinks = [
         },
         {
           id: 3,
-          name: 'TypeScript',
-          path: '/assets/typescript.png',
+          name: 'JavaScript',
+          path: '/assets/javascript.svg',
         },
         {
           id: 4,
-          name: 'Framer Motion',
-          path: '/assets/framer.png',
-        },
-      ],
-    },
-    {
-      title: 'Horizon - Online Banking Platform',
-      desc: 'Horizon is a comprehensive online banking platform that offers users a centralized finance management dashboard. It allows users to connect multiple bank accounts, monitor real-time transactions, and seamlessly transfer money to other users.',
-      subdesc:
-        'Built with Next.js 14 Appwrite, Dwolla and Plaid, Horizon ensures a smooth and secure banking experience, tailored to meet the needs of modern consumers.',
-      href: 'https://www.youtube.com/watch?v=PuOVqP_cjkE',
-      texture: '/textures/project/project4.mp4',
-      logo: '/assets/project-logo4.png',
-      logoStyle: {
-        backgroundColor: '#0E1F38',
-        border: '0.2px solid #0E2D58',
-        boxShadow: '0px 0px 60px 0px #2F67B64D',
-      },
-      spotlight: '/assets/spotlight4.png',
-      tags: [
-        {
-          id: 1,
-          name: 'React.js',
-          path: '/assets/react.svg',
-        },
-        {
-          id: 2,
-          name: 'TailwindCSS',
-          path: 'assets/tailwindcss.png',
-        },
-        {
-          id: 3,
-          name: 'TypeScript',
-          path: '/assets/typescript.png',
-        },
-        {
-          id: 4,
-          name: 'Framer Motion',
-          path: '/assets/framer.png',
-        },
-      ],
-    },
-    {
-      title: 'Imaginify - AI Photo Manipulation App',
-      desc: 'Imaginify is a groundbreaking Software-as-a-Service application that empowers users to create stunning photo manipulations using AI technology. With features like AI-driven image editing, a payments system, and a credits-based model.',
-      subdesc:
-        'Built with Next.js 14, Cloudinary AI, Clerk, and Stripe, Imaginify combines cutting-edge technology with a user-centric approach. It can be turned into a side income or even a full-fledged business.',
-      href: 'https://www.youtube.com/watch?v=Ahwoks_dawU',
-      texture: '/textures/project/project5.mp4',
-      logo: '/assets/project-logo5.png',
-      logoStyle: {
-        backgroundColor: '#1C1A43',
-        border: '0.2px solid #252262',
-        boxShadow: '0px 0px 60px 0px #635BFF4D',
-      },
-      spotlight: '/assets/spotlight5.png',
-      tags: [
-        {
-          id: 1,
-          name: 'React.js',
-          path: '/assets/react.svg',
-        },
-        {
-          id: 2,
-          name: 'TailwindCSS',
-          path: 'assets/tailwindcss.png',
-        },
-        {
-          id: 3,
-          name: 'TypeScript',
-          path: '/assets/typescript.png',
-        },
-        {
-          id: 4,
-          name: 'Framer Motion',
-          path: '/assets/framer.png',
+          name: 'Apache Kafka',
+          path: '/assets/Kafka.svg',
         },
       ],
     },
@@ -248,7 +273,7 @@ export const navLinks = [
   
   export const calculateSizes = (isSmall, isMobile, isTablet) => {
     return {
-      deskScale: isSmall ? 0.05 : isMobile ? 0.06 : 0.065,
+      deskScale: isSmall ? 0.1 : isMobile ? 0.15 : 0.25,
       deskPosition: isMobile ? [0.5, -4.5, 0] : [0.25, -5.5, 0],
       cubePosition: isSmall ? [4, -5, 0] : isMobile ? [5, -5, 0] : isTablet ? [5, -5, 0] : [9, -5.5, 0],
       reactLogoPosition: isSmall ? [3, 4, 0] : isMobile ? [5, 4, 0] : isTablet ? [5, 4, 0] : [12, 3, 0],
@@ -260,32 +285,51 @@ export const navLinks = [
   export const workExperiences = [
     {
       id: 1,
-      name: 'Framer',
-      pos: 'Lead Web Developer',
-      duration: '2022 - Present',
-      title: "Framer serves as my go-to tool for creating interactive prototypes. I use it to bring designs to  life, allowing stakeholders to experience the user flow and interactions before development.",
-      icon: '/assets/framer.svg',
-      animation: 'victory',
+      name: 'Frontend',
+      pos: 'Frontend Web Developer',
+      duration: '2022 - 2023',
+      title: "Built responsive and accessible user interfaces using React.js, Next.js, and Tailwind CSS. Focused on performance, user experience, and cross-browser compatibility.",
+      icon: '/assets/react.svg',
+      animation: 'salute',
     },
     {
       id: 2,
-      name: 'Figma',
-      pos: 'Web Developer',
-      duration: '2020 - 2022',
-      title: "Figma is my collaborative design platform of choice. I utilize it to work seamlessly with team members and clients, facilitating real-time feedback and design iterations. Its cloud-based.",
-      icon: '/assets/figma.svg',
+      name: 'Backend',
+      pos: 'Backend Web Developer',
+      duration: '2023 - 2024',
+      title: "Developed robust RESTful APIs with Node.js and Express.js. Managed data persistence using MongoDB and implemented authentication, authorization, and server-side logic.",
+      icon: 'https://img.icons8.com/color/96/000000/nodejs.png',
       animation: 'clapping',
     },
     {
       id: 3,
-      name: 'Notion',
-      pos: 'Junior Web Developer',
-      duration: '2019 - 2020',
-      title: "Notion helps me keep my projects organized. I use it for project management, task tracking, and as a central hub for documentation, ensuring that everything from design notes to.",
-      icon: '/assets/notion.svg',
-      animation: 'salute',
+      name: 'Full Stack',
+      pos: 'Full Stack Web Developer',
+      duration: '2024 - Present',
+      title: "Engineered end-to-end web applications by combining modern frontend frameworks with scalable backend services. Integrated third-party APIs and ensured seamless communication between client and server.",
+      icon: 'https://img.icons8.com/ios/96/ffffff/express-js.png',
+      animation: 'victory',
     },
+    
   ];
+
+  export const topics = [
+  {
+    title: "Community Contribution",
+    icon: "/assets/collaboration.png", // Optional icon path
+    content: "I believe in growing together. I contribute by helping peers with coding problems, sharing resources, and participating in tech discussions and college events. I’m continuously learning and aim to support others through small but meaningful interactions",
+  },
+  {
+    title: "Skills",
+    icon: "/assets/skill.png",
+    content: "Proficient in JavaScript, React.js, Node.js, MongoDB, Firebase, Tailwind CSS, Next.js and APIs with experience in building full-stack applications.",
+  },
+  {
+    title: "Interests",
+    icon: "/assets/interest.png",
+    content: "Keen interest in AI, web development and Problem Solving. I love integrating AI tools into real-world projects and learning new tech.",
+  },
+];
 
   export const footer = [
     {
@@ -293,4 +337,11 @@ export const navLinks = [
         name: 'GitHub',
         link: 'https://github.com/nikhilkushawaha'
     }
-  ]
+  ];
+
+export const counterItems = [
+  { value: 2, suffix: "+", label: "Years of Experience" },
+  { value: 10, suffix: "+", label: "Satisfied Clients" },
+  { value: 20, suffix: "+", label: "Completed Projects" },
+  { value: 90, suffix: "%", label: "Client Retention Rate" },
+]
