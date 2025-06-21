@@ -1,54 +1,27 @@
-const LOCAL_STORAGE_KEY = "portfolio-reviews";
-
-// Generate a simple unique ID
-const generateId = () => {
-  return Date.now().toString(36) + Math.random().toString(36).substring(2);
-};
-
-// Get all reviews from local storage
-export const getReviews = () => {
-  const storedReviews = localStorage.getItem(LOCAL_STORAGE_KEY);
-  if (!storedReviews) return [];
-  
-  try {
-    const parsedReviews = JSON.parse(storedReviews);
-    return parsedReviews.map((review) => ({
-      ...review,
-      createdAt: new Date(review.createdAt)
-    }));
-  } catch (error) {
-    console.error("Error parsing reviews:", error);
-    return [];
+// src/lib/reviewService.js
+export const getReviews = async () => {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/api/reviews`);
+  if (!response.ok) {
+    throw new Error("Error fetching reviews");
   }
+  return await response.json();
 };
 
-// Add a new review
 export const addReview = async (reviewData) => {
-  // In a real app, this would upload the image to a server or cloud storage
-  // For now, we'll convert the image to a data URL for demo purposes
-  let photoUrl = "";
-  
+  const formData = new FormData();
+  formData.append("name", reviewData.name);
+  formData.append("rating", reviewData.rating);
+  formData.append("comment", reviewData.comment);
   if (reviewData.photo) {
-    photoUrl = await new Promise((resolve) => {
-      const reader = new FileReader();
-      reader.onload = (e) => resolve(e.target?.result);
-      reader.readAsDataURL(reviewData.photo);
-    });
+    formData.append("photo", reviewData.photo);
   }
-  
-  const newReview = {
-    _id: generateId(),
-    name: reviewData.name,
-    rating: reviewData.rating,
-    comment: reviewData.comment,
-    photoUrl,
-    createdAt: new Date()
-  };
-  
-  const existingReviews = getReviews();
-  const updatedReviews = [newReview, ...existingReviews];
-  
-  localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(updatedReviews));
-  
-  return newReview;
+
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/api/reviews`, {
+    method: "POST",
+    body: formData,
+  });
+  if (!response.ok) {
+    throw new Error("Error submitting review");
+  }
+  return await response.json();
 };

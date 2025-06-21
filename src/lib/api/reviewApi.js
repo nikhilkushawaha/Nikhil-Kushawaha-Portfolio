@@ -1,23 +1,30 @@
-import { getReviews, addReview } from '../reviewService.js';
-
-// Get all reviews
+// reviewApi.js
 export const fetchReviews = async () => {
-  try {
-    const reviews = getReviews();
-    return reviews;
-  } catch (error) {
-    console.error('Error fetching reviews:', error);
-    throw error;
+  const res = await fetch(`${import.meta.env.VITE_API_URL}/api/reviews`);
+  if (!res.ok) {
+    throw new Error("Error fetching reviews");
   }
+  return await res.json();
 };
 
-// Add a new review
 export const submitReview = async (reviewData) => {
-  try {
-    const newReview = await addReview(reviewData);
-    return newReview;
-  } catch (error) {
-    console.error('Error submitting review:', error);
-    throw error;
+  const formData = new FormData();
+  formData.append("name", reviewData.name);
+  formData.append("rating", reviewData.rating);
+  formData.append("comment", reviewData.comment);
+  if (reviewData.photo) {
+    formData.append("photo", reviewData.photo);
   }
+
+  const res = await fetch(`${import.meta.env.VITE_API_URL}/api/reviews`, {
+    method: "POST",
+    body: formData,
+  });
+  if (!res.ok) {
+    const errorData = await res.json();
+    console.error(errorData);
+    throw new Error(errorData.message || "Error submitting review");
+  }
+
+  return await res.json();
 };

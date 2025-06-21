@@ -1,15 +1,15 @@
 import React, { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ImageIcon, UploadIcon, XIcon } from "lucide-react";
+import { Image as ImageIcon, Upload as UploadIcon, X as XIcon } from "lucide-react"; // Adjust if needed
 import { cn } from "@/lib/utils";
 
-const ImageUpload = ({ onImageSelect, className }) => {
+const ImageUpload = ({ onImageSelect = () => {}, className }) => {
   const [preview, setPreview] = useState(null);
   const fileInputRef = useRef(null);
 
   const handleFileChange = (e) => {
     const file = e.target.files?.[0] || null;
-    
+
     if (file) {
       onImageSelect(file);
       const reader = new FileReader();
@@ -27,7 +27,7 @@ const ImageUpload = ({ onImageSelect, className }) => {
     setPreview(null);
     onImageSelect(null);
     if (fileInputRef.current) {
-      fileInputRef.current.value = "";
+      fileInputRef.current.value = ""; // Reset the input
     }
   };
 
@@ -41,36 +41,36 @@ const ImageUpload = ({ onImageSelect, className }) => {
         className="hidden"
         id="image-upload"
       />
-      
+
       {preview ? (
         <div className="relative">
-          <img 
-            src={preview} 
-            alt="Preview" 
+          <img
+            src={preview}
+            alt="Preview"
             className="w-24 h-24 object-cover rounded-full border-2 border-primary"
           />
           <button
             onClick={handleClearImage}
             className="absolute top-0 right-0 bg-destructive text-white rounded-full p-1"
             type="button"
+            aria-label="Remove image"
           >
             <XIcon size={14} />
           </button>
         </div>
       ) : (
-        <div 
-          className="w-24 h-24 rounded-full flex items-center justify-center bg-muted border-2 border-dashed border-muted-foreground"
-        >
+        <div className="w-24 h-24 rounded-full flex items-center justify-center bg-muted border-2 border-dashed border-muted-foreground">
           <ImageIcon size={32} className="text-muted-foreground" />
         </div>
       )}
-      
+
       <label htmlFor="image-upload" className="mt-2">
-        <Button 
-          type="button" 
-          variant="outline" 
+        <Button
+          type="button"
+          variant="outline"
           className="cursor-pointer"
           size="sm"
+          onClick={() => fileInputRef.current?.click()}
         >
           <UploadIcon size={16} className="mr-2" />
           {preview ? "Change Photo" : "Upload Photo"}

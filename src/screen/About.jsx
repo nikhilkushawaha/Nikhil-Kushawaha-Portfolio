@@ -64,9 +64,11 @@ const About = () => {
             <div>
               <p className="grid-headtext">I’m very flexible with time zone communications & locations</p>
               <p className="grid-subtext">I&apos;m based in Ghaziabad, Uttar Pradesh and open to remote work worldwide.</p>
+              <a href='#contact' className='w-fit'>
               <Button name="Contact Me" isBeam containerClass="w-full mt-2" />
+              </a>
             </div>
-          </GlowingGridCard>
+            </GlowingGridCard>
         </div>
 
         <div className="xl:col-start-3 xl:row-span-2 xl:row-start-6 xl:-mt-12" data-aos="fade-up-left">
@@ -79,12 +81,12 @@ const About = () => {
 
             <div className="space-y-2">
               <p className="grid-subtext text-center">Contact me</p>
-              <div className="copy-container" onClick={handleCopy}>
+              <div className="copy-container z-501" onClick={handleCopy}>
                 <img src={hasCopied ? 'assets/tick.svg' : 'assets/copy.svg'} alt="copy" />
                 <p className="lg:text-xl md:text-xl font-medium text-gray_gradient text-white">nikhilkushawaha66@gmail.com</p>
               </div>
             </div>
-          </GlowingGridCard>
+            </GlowingGridCard>
         </div>
       </div>
     </section>

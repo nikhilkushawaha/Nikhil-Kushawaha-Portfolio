@@ -46,7 +46,7 @@ const Home = () => {
 
       <div className="w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3">
         <div>
-          <p className="sm:text-5xl text-xl font-bold text-white font-generalsans">
+          <p className="header-text sm:text-5xl text-xl font-bold text-white font-generalsans">
             Hi, I'm Nikhil <span className="waving-hand">👋</span>
           </p>
           <p className="hero_tag text-xl text-neutral-200">
@@ -58,7 +58,7 @@ const Home = () => {
             both the front-end and back-end to create complete solutions.
           </p>
 
-          <div className="flex mt-3 gap-3 z-10 cursor-pointer">
+          <div className="flex mt-3 gap-3 cursor-pointer">
             <a
               className="social-icon"
               href="https://github.com/nikhilkushawaha"
@@ -73,7 +73,7 @@ const Home = () => {
             </a>
             <a
               className="social-icon"
-              href="https://www.linkedin.com/in/nikhil-kushawaha-470071270?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+              href="https://www.linkedin.com/in/nikhil-kushawaha-470071270"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -109,8 +109,8 @@ const Home = () => {
             </a>
           </div>
 
-          <div className="flex gap-3 mt-2 z-10">
-            <a href="#" className="w-fit">
+          <div className="flex gap-3 mt-2">
+            <a href="#contact" className="w-fit z-50">
               <Button
                 name="CONTACT ME"
                 isBeam
@@ -118,7 +118,7 @@ const Home = () => {
               />
             </a>
 
-            <a href="#" className="w-fit">
+            <a href="https://drive.google.com/file/d/1Ir_uEGuxKNF-IpaXLgIlsBUeA1Qwavhl/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="w-fit z-50">
               <Button
                 name="RESUME"
                 isBeam
@@ -128,9 +128,9 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="sliding-text text-white">
+        <div className="sliding-text text-[#ECEBDE]">
           <h1>
-            Shaping
+            From
             <span className="slide">
               <span className="wrapper">
                 {words.map((word, index) => (
@@ -141,15 +141,15 @@ const Home = () => {
                     <img
                       src={word.imgPath}
                       alt="person"
-                      className="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-neutral-200"
+                      className="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-[#D5C7A3]"
                     />
-                    <span className="text-neutral-200">{word.text}</span>
+                    <span className="text-[#D5C7A3]">{word.text}</span>
                   </span>
                 ))}
               </span>
             </span>
           </h1>
-          <h1>into Real Projects</h1>
+          <h1 className="xl:text-[40px]">Building End‑to‑End Solutions</h1>
         </div>
       </div>
 

@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import StarRating from "./StarRating";
 import ImageUpload from "./ImageUpload";
+import { addReview } from "../lib/reviewService";
 
 const ReviewForm = ({ onReviewSubmitted }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -12,45 +13,37 @@ const ReviewForm = ({ onReviewSubmitted }) => {
     name: "",
     rating: 0,
     comment: "",
-    photo: null
+    photo: null,
   });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleRatingChange = (rating) => {
-    setFormData(prev => ({ ...prev, rating }));
+    setFormData((prev) => ({ ...prev, rating }));
   };
 
   const handlePhotoChange = (file) => {
-    setFormData(prev => ({ ...prev, photo: file }));
+    setFormData((prev) => ({ ...prev, photo: file }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    if (!formData.name.trim()) {
+
+    if (!formData.name.trim() || formData.rating === 0) {
       return;
     }
-    
-    if (formData.rating === 0) {
-      return;
-    }
-    
+
     setIsSubmitting(true);
-    
     try {
-      await onReviewSubmitted(formData);
-      
-      // Reset form
-      setFormData({
-        name: "",
-        rating: 0,
-        comment: "",
-        photo: null
-      });
+      await addReview(formData);
+      alert("Review submitted successfully!");
+      setFormData({ name: "", rating: 0, comment: "", photo: null }); // Reset
+    } catch (error) {
+      console.error(error);
+      alert("There was an error submitting your review.");
     } finally {
       setIsSubmitting(false);
     }
@@ -59,7 +52,9 @@ const ReviewForm = ({ onReviewSubmitted }) => {
   return (
     <Card className="backdrop-blur-md">
       <CardHeader>
-        <CardTitle className="text-center text-2xl font-bold">Share Your Feedback</CardTitle>
+        <CardTitle className="text-center text-2xl font-bold">
+          Share Your Feedback
+        </CardTitle>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -80,11 +75,9 @@ const ReviewForm = ({ onReviewSubmitted }) => {
               </div>
 
               <div className="space-y-2">
-                <label className="block text-sm font-medium">
-                  Rating
-                </label>
-                <StarRating 
-                  rating={formData.rating} 
+                <label className="block text-sm font-medium">Rating</label>
+                <StarRating
+                  rating={formData.rating}
                   onRatingChange={handleRatingChange}
                   size={32}
                 />
@@ -113,9 +106,9 @@ const ReviewForm = ({ onReviewSubmitted }) => {
             </div>
           </div>
 
-          <Button 
-            type="submit" 
-            className="w-full bg-"
+          <Button
+            type="submit"
+            className="w-full bg-white-600"
             disabled={isSubmitting}
           >
             {isSubmitting ? "Submitting..." : "Submit Review"}

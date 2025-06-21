@@ -14,14 +14,21 @@ const ReviewCard = ({ review }) => {
   // Format date as "Month Day, Year"
   const formattedDate = format(new Date(review.createdAt), "MMMM d, yyyy");
 
+  const imageUrl = review.photoUrl
+    ? `${import.meta.env.VITE_API_URL}${review.photoUrl}`
+    : "";
+
   return (
     <Card className="h-full bg-white-800 backdrop-blur-md">
       <CardHeader className="flex flex-row items-center gap-4 pb-2">
-        <Avatar className="h-12 w-12">
-          <AvatarImage src={review.photoUrl} alt={review.name} />
-          <AvatarFallback className="bg-primary">
-            {review.photoUrl ? <User size={20} /> : nameInitial}
-          </AvatarFallback>
+       <Avatar className="h-12 w-12">
+          {imageUrl ? (
+            <AvatarImage src={imageUrl} alt={review.name} />
+          ) : (
+            <AvatarFallback className="bg-white-600">
+              {nameInitial}
+            </AvatarFallback>
+          )}
         </Avatar>
         <div className="space-y-1">
           <h3 className="font-semibold text-lg">{review.name}</h3>
