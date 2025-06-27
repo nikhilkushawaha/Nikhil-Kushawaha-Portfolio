@@ -47,7 +47,7 @@ const Reviews = () => {
       </div>
       
       {isLoading ? (
-        <div className="text-center py-8">Loading reviews...</div>
+        <div className="text-center text-white-600 py-8">Loading reviews...</div>
       ) : error ? (
         <div className="text-center text-red-500 py-8">
           Error loading reviews. Please try again later.

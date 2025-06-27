@@ -14,9 +14,10 @@ const ReviewCard = ({ review }) => {
   // Format date as "Month Day, Year"
   const formattedDate = format(new Date(review.createdAt), "MMMM d, yyyy");
 
-  const imageUrl = review.photoUrl
-    ? `${import.meta.env.VITE_API_URL}${review.photoUrl}`
-    : "";
+  const imageUrl = review.photoUrl?.startsWith("http")
+  ? review.photoUrl
+  : "";
+
 
   return (
     <Card className="h-full bg-white-800 backdrop-blur-md">
