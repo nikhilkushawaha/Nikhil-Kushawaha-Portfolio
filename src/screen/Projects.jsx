@@ -128,7 +128,9 @@ const Projects = () => {
           </div>
         </div>
 
-        <div className="flex items-center justify-center p-3 border border-black-300 bg-black-200 rounded-lg h-96 md:h-full">
+        <div
+          className="flex items-center justify-center p-3 border border-black-300 bg-[conic-gradient(at_left,_var(--tw-gradient-stops))] from-[#000000]  to-[#0c0b0b] rounded-lg h-96 md:h-full"
+        >
           <img src={currentProject.project} alt="project image" />
         </div>
       </div>
