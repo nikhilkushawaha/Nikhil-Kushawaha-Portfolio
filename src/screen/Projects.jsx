@@ -29,7 +29,7 @@ const Projects = () => {
   const currentProject = myProjects[selectedProjectIndex];
 
   return (
-    <section className="c-space my-20">
+    <section id="projects" className="c-space my-20">
       <p className="head-text">My Projects</p>
 
       <div className="project-container">
@@ -89,22 +89,35 @@ const Projects = () => {
               {currentProject.tags.map((tag, index) => (
                 <div key={index} className="relative group">
                   <img src={tag.path} alt={tag.name} className="tech-logo" />
-                  <div className="absolute bottom-full mb-1 left-1/2 -translate-x-1/2 px-2 py-1 text-xs text-white bg-black rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-10">
+                  <div className="absolute bottom-full mb-1 left-1/2 -translate-x-1/2 px-2 py-1 text-xs text-white bg-gray rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-10">
                     {tag.name}
                   </div>
                 </div>
               ))}
             </div>
 
-            <a
-              className="flex items-center gap-2 cursor-pointer text-white-600"
-              href={currentProject.href}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <p>Check Live Site</p>
-              <img src="/assets/arrow-up.png" alt="arrow" className="w-3 h-3" />
-            </a>
+            <div className="flex items-center gap-3">
+              {currentProject.github && (
+                <a
+                  href={currentProject.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-2 cursor-pointer"
+                >
+                  <img src="/assets/github.svg" alt="github" className="tech-logo" />
+                </a>
+              )}
+
+              <a
+                className="flex items-center gap-2 cursor-pointer text-white-600"
+                href={currentProject.href}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <p>Check Live Site</p>
+                <img src="/assets/arrow-up.png" alt="arrow" className="w-3 h-3" />
+              </a>
+            </div>
           </div>
 
           <div className="flex justify-between items-center mt-7">

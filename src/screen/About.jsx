@@ -24,21 +24,20 @@ const About = () => {
   return (
     <section className="c-space my-10" id="about">
       <div className="grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 xl:h-[800px] h-full">
-        <div className="col-span-1 xl:row-span-3" data-aos="fade-down-right">
+        <div className="col-span-1 xl:row-span-3">
           <GlowingGridCard>
             <img src="assets/nikhil.jpg" alt="Nikhil-Kushawaha" className="w-full sm:h-[250px] h-fit object-contain -mt-2" />
 
             <div>
               <p className="grid-headtext">Hi, I&apos;m Nikhil Kushawaha</p>
               <p className="grid-subtext">
-                "Currently pursuing B.Tech (3rd Year), I have honed my skills in both frontend and backend dev, creating dynamic
-                and responsive websites."
+                "B.Tech graduate - 2026 in AIML with Honours in Cyber Security from Ajay Kumar Garg Engineering College, Ghaziabad"
               </p>
             </div>
           </GlowingGridCard>
         </div>
 
-        <div className="xl:col-span-2 xl:row-span-3" data-aos="fade-down">
+        <div className="xl:col-span-2 xl:row-span-3">
           <GlowingGridCard>
             <TechStack />
             <div>
@@ -51,7 +50,7 @@ const About = () => {
           </GlowingGridCard>
         </div>
 
-        <div className="xl:col-span-2 xl:row-span-4 xl:row-start-4" data-aos="fade-up-right" id='myExperience'>
+        <div className="xl:col-span-2 xl:row-span-4 xl:row-start-4" id='myExperience'>
           <GlowingGridCard>
             <img src="assets/gridz.png" alt="grid-3" className="w-full sm:h-[266px] h-fit object-contain" />
 
@@ -71,7 +70,7 @@ const About = () => {
             </GlowingGridCard>
         </div>
 
-        <div className="xl:col-start-3 xl:row-span-2 xl:row-start-6 xl:-mt-12" data-aos="fade-up-left">
+        <div className="xl:col-start-3 xl:row-span-2 xl:row-start-6 xl:-mt-12">
           <GlowingGridCard>
             <img
               src="assets/grid4.png"
